@@ -1,0 +1,27 @@
+# Logs
+logs/
+*.log
+
+# Nest.js output folder
+dist/
+
+# Dependency directories
+node_modules/
+
+# Environment variables file
+.env
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Compiled TypeScript files
+*.js
+*.js.map
+
+# Miscellaneous
+*.swp
+.DS_Store
+
+# json storage module
+db.json
