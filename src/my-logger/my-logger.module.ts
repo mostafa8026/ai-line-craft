@@ -1,8 +1,9 @@
-import { Module } from '@nestjs/common';
+import { Global, Module } from '@nestjs/common';
 import got from 'got';
 import { IP } from './constants/injection-tokens';
 import { MyLoggerService } from './my-logger.service';
 
+@Global()
 @Module({
   providers: [
     MyLoggerService,

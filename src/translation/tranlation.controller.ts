@@ -10,7 +10,9 @@ import {
   Post,
   Put,
   Query,
+  UseGuards,
 } from '@nestjs/common';
+import { ApiKeyGuard } from 'src/api-keys/guards/api-key.guard';
 import { PaginationQuery } from 'src/shared/pagination-query.dto';
 import { MyLoggerService } from '../my-logger/my-logger.service';
 import { TranslateRequestDTO } from './dtos/translation-request.dto';
@@ -62,6 +64,7 @@ export class TranslationController {
     return this.translationService.delete(translation);
   }
 
+  @UseGuards(ApiKeyGuard)
   @Post('/translate')
   translate(@Body() translateRequest: TranslateRequestDTO) {
     return this.openaiService.translate(

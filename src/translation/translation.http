@@ -31,6 +31,7 @@ Content-Type: application/json
 ### POST translate
 POST http://localhost:3000/translation/translate
 Content-Type: application/json
+x-api-key: 53d8fa4b-0c79-4616-ae4f-f57585259021
 
 {
   "sourceLang": "fa",

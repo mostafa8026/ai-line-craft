@@ -1,4 +1,12 @@
-## get users
+### create user
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "name": "mostafa"
+}
+
+### get all users
 GET http://localhost:3000/user
 
 ### get by id

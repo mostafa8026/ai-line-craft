@@ -2,6 +2,7 @@ import { NestOpenaiModule } from '@mostafa8026/nest-openai';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ApiKeysModule } from 'src/api-keys/api-keys.module';
 import { JsonStorageModule } from 'src/json-storage/json-storage.module';
 import { MyLoggerModule } from '../my-logger/my-logger.module';
 import { TranslationEntity } from './entities/translation.entity';
@@ -20,6 +21,7 @@ import { TranslationService } from './translation.service';
       },
     }),
     MyLoggerModule,
+    ApiKeysModule,
   ],
   controllers: [TranslationController],
   providers: [TranslationService],

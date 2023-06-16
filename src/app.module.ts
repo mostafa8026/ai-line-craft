@@ -1,13 +1,16 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigurationModule } from './configuration/configuration.module';
+import { ErrorsModule } from './errors/errors.module';
 import { EventModule } from './event/event.module';
+import { GlobalBindedModule } from './global-binded/global-binded.module';
 import { MyLoggerModule } from './my-logger/my-logger.module';
 import { TranslationModule } from './translation/translation.module';
 import { UsersModule } from './users/users.module';
-import { ConfigModule } from '@nestjs/config';
+import { ApiKeysModule } from './api-keys/api-keys.module';
 
 @Module({
   imports: [
@@ -16,7 +19,7 @@ import { ConfigModule } from '@nestjs/config';
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      database: 'translation',
+      database: 'ailine',
       username: 'postgres',
       password: 'postgres',
       synchronize: true,
@@ -27,6 +30,10 @@ import { ConfigModule } from '@nestjs/config';
     EventModule,
     MyLoggerModule,
     ConfigurationModule,
+    GlobalBindedModule,
+    ErrorsModule,
+    GlobalBindedModule,
+    ApiKeysModule,
   ],
   controllers: [AppController],
   providers: [AppService],
