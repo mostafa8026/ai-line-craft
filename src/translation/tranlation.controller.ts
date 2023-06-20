@@ -22,6 +22,7 @@ import {
   TranslationUpdateDTO,
 } from './entities/translation.entity';
 import { TranslationService } from './translation.service';
+import { LanguageValidationPipe } from './pipes/language-validation.pipe';
 
 @Controller('translation')
 export class TranslationController {
@@ -66,7 +67,10 @@ export class TranslationController {
 
   @UseGuards(ApiKeyGuard)
   @Post('/translate')
-  translate(@Body() translateRequest: TranslateRequestDTO) {
+  translate(
+    @Body() translateRequest: TranslateRequestDTO,
+    @Body('sourceLang', LanguageValidationPipe) sourcelang: string,
+  ) {
     return this.openaiService.translate(
       translateRequest.sourceLang,
       translateRequest.targetLang,

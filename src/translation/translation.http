@@ -31,10 +31,10 @@ Content-Type: application/json
 ### POST translate
 POST http://localhost:3000/translation/translate
 Content-Type: application/json
-x-api-key: 53d8fa4b-0c79-4616-ae4f-f57585259021
+x-api-key: 20663aaf-f81d-4158-b45d-fa20668a8545
 
 {
-  "sourceLang": "fa",
+  "sourceLang": "ar",
   "targetLang": "en",
   "phrase": "پترن راه راه"
 }

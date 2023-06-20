@@ -11,6 +11,7 @@ import { MyLoggerModule } from './my-logger/my-logger.module';
 import { TranslationModule } from './translation/translation.module';
 import { UsersModule } from './users/users.module';
 import { ApiKeysModule } from './api-keys/api-keys.module';
+import { LanguageModule } from './language/language.module';
 
 @Module({
   imports: [
@@ -34,6 +35,7 @@ import { ApiKeysModule } from './api-keys/api-keys.module';
     ErrorsModule,
     GlobalBindedModule,
     ApiKeysModule,
+    LanguageModule,
   ],
   controllers: [AppController],
   providers: [AppService],

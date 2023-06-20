@@ -8,6 +8,7 @@ import { MyLoggerModule } from '../my-logger/my-logger.module';
 import { TranslationEntity } from './entities/translation.entity';
 import { TranslationController } from './tranlation.controller';
 import { TranslationService } from './translation.service';
+import { LanguageModule } from '../language/language.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { TranslationService } from './translation.service';
     }),
     MyLoggerModule,
     ApiKeysModule,
+    LanguageModule,
   ],
   controllers: [TranslationController],
   providers: [TranslationService],
